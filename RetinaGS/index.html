@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="website page for the paper RetinaGS">
+  <meta property="og:title" content="MThreads AI" />
+  <meta property="og:description" content="The AI department of Moore Threads" />
+  <meta property="og:url" content="https://www.mthreads.com" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="./static/image/banner-about.jpg" />
+  <meta property="og:image:width" content="3360" />
+  <meta property="og:image:height" content="1260" />
+
+
+  <!-- <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG"> -->
+  <!-- <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG"> -->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="./static/images/your_twitter_banner_image.png"> -->
+  <!-- <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by-->
+  <!-- <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+
+  <title>RetinaGS: Scalable Training for Dense Scene
+    Rendering with Billion-Scale 3D Gaussians
+  </title>
+  <link rel="icon" type="image/x-icon" href="./static/images/favicon-air.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">RetinaGS: Scalable Training for Dense Scene
+              Rendering with Billion-Scale 3D Gaussians
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors, add per -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=fLP_8MYAAAAJ" target="_blank">Bingling Li
+                </a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=JL7eDaEAAAAJ" target="_blank">Shengyi Chen
+                </a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Luchao Wang
+                </a>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=s4FEObgAAAAJ" target="_blank">Kaimin Liao
+                </a>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=tAgSyxIAAAAJ" target="_blank">Sijie Yan
+                </a><sup>┼</sup>,</span>
+              <span class="author-block">
+                <a href="https://yjxiong.me/" target="_blank">Yuanjun Xiong
+                </a></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">MThreads AI<br></span>
+              <span class="eql-cntrb"><small><br><sup>*</sup> Equal Contribution, <sup>┼</sup> Corresponding Author </small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2406.11836.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary PDF link -->
+                <!-- <span class="link-block">
+                      <a href="./static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/MatlabChen/RetinaGS" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/2406.11836" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+                </span> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--videos carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+
+          <div class="item">
+            <video poster="" id="video_1" autoplay controls muted loop height="100%">
+              <source src="./static/videos/Demo_B_3_Compression.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="item">
+            <video poster="" id="video_2" autoplay controls muted loop height="100%">
+              <source src="./static/videos/Demo_B_4_Compression.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="item">
+            <video poster="" id="video_3" autoplay controls muted loop height="100%">
+              <source src="./static/videos/Demo_B_5_Compression.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="item">
+            <video poster="" id="video_4" autoplay controls muted loop height="100%">
+              <source src="./static/videos/Demo_B_6_Compression.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="item">
+            <video poster="" id="video_5" autoplay controls muted loop height="100%">
+              <source src="./static/videos/Demo_B_7_Compression.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="item">
+            <video poster="" id="video_6" autoplay controls muted loop height="100%">
+              <source src="./static/videos/Demo_B_8_Compression.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="item">
+            <video poster="" id="video_7" autoplay controls muted loop height="100%">
+              <source src="./static/videos/Demo_B_1_Compression.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="item">
+            <video poster="" id="video_8" autoplay controls muted loop height="100%">
+              <source src="./static/videos/Demo_B_2_Compression.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="content has-text-justified"><p></br>Our approach enables the training of a native large-scale 3D Gaussian Splatting (3DGS) model with over <b>1 billion Gaussian Primitives</b>. The videos showcase the reconstruction results on a 2.7 km² city dataset with 140,000 images. Even when zooming in to a specific location, the details remain rich and realistic.</br></p></div>
+      </div>
+    </div>
+
+  </section>
+  <!-- End videos carousel -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In this work, we explore the possibility of training high-parameter 3D Gaussian
+              splatting (3DGS) models on <b>large-scale, high-resolution</b> datasets. We design a
+              general <b>model parallel</b> training method for 3DGS, named RetinaGS, which uses a
+              proper rendering equation and <b>can be applied to any scene and arbitrary distribution</b>
+              of Gaussian primitives. It enables us to explore the scaling behavior of 3DGS in
+              terms of primitive numbers and training resolutions that were difficult to explore
+              before and surpass previous state-of-the-art reconstruction quality. We observe a
+              clear positive trend of increasing visual quality when increasing primitive numbers
+              with our method. We also demonstrate the first attempt at training a 3DGS model
+              with more than <b>one billion</b> primitives on the full MatrixCity dataset that attains a
+              promising visual quality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <!--Method-->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Method Overview</h2>
+
+      <div class="columns is-centered">
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Analysis -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Anylysis</h2>
+      <br>
+      <h2 class="title is-4">Performance vs. Gaussian Primitives</h2>
+      <img src="./static/images/PSNRvsPrimitives.png" alt="Graph for quality evaluation">
+      <div class="content has-text-justified">
+        <p>
+          Our distributed training approach <b>enables the use of a large number of Gaussian primitives.</b>
+          We observed a strong positive correlation between the number of Gaussian primitives and the final model's
+          PSNR.
+          When the number of primitives is similar, our PSNR closely matches the quality of 3DGS trained on a single
+          GPU;
+          however, we can effectively achieve <b>higher PSNRs by simply increasing the number of primitives.</b>
+        </p>
+      </div>
+      <br><br>
+      <h2 class="title is-4">Many-to-Many Relationship Between Rays and Traversed Subspaces</h2>
+      <img src="./static/images/Fig2.png" alt="Graph for quality evaluation">
+      <br><br>
+      <div class="content has-text-justified">
+        <p>
+          Previous methods [2,3] skip the merging process between subspaces,
+          <b>implicitly assuming that a single ray is primarily influenced by one subspace and predominantly contributed
+            to by Gaussians within that subspace.</b>
+          This assumption holds true for bird's-eye view datasets. Due to the limited perspective variation in these
+          datasets,
+          rays almost always pass downward through one, or at most two, subspaces.
+          Above figure shows the frequency histogram of the number of subspaces hit by each ray.
+          As seen in more general datasets, such as street view datasetsand indoor datasets,
+          rays often intersect multiple subspaces. This undermines the basic assumptions of previous works.
+
+          <b>Our distributed framework is computationally equivalent to the original 3DGS and does not rely on any
+            assumptions about data distribution or perspective </b>, making it a more general approach.
+        </p>
+      </div>
+      The following video demonstrates the visual effects from both a <b>bird view</b> and a <b>street view</b> in an urban scene. <br><br>
+      <div class="item">
+        <video poster="" id="video_city" autoplay controls muted loop height="100%">
+          <source src="./static/videos/Demo_B_8_Compression.mp4" type="video/mp4">
+        </video>
+      </div>
+
+
+      <br><br>
+      <h2 class="title is-4">Effectiveness of Partition Strategies</h2>
+      <div class="content has-text-justified">
+        <p>
+          Below figure shows merge tests with only two subspaces for different partition approaches.
+          The cell-independent methods used in previous works [2,3] can cause rendering artifacts at
+          boundaries. Our approach renders the boundaries perfectly.
+        </p>
+      </div>
+      <img src="./static/images/Dividing.png" alt="Graph for quality evaluation">
+
+
+    </div>
+  </section>
+  <!-- End Analysis -->
+
+  <!--Results-->
+  <section class="section">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3">Results</h2>
+      <h2 class="title is-4">Close-up Inspection of Indoor Objects</h2>
+      In the real world, the closer you are to an object, the more details you can observe. However, the memory limitations of a single-core GPU restrict the number of rendering units (Gaussian Primitives), making it difficult to closely inspect objects with high detail. Distributed training can significantly improve this limitation.<br><br>
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+
+                <div id="example5" class="bal-container-small">
+                  <div class="bal-before">
+                    <div class="bal-before-inset">
+                      <img src="./static/images/DSC04902_6w.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Ours<br>32.19M
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bal-after">
+                    <img src="./static/images/DSC04902.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      3DGS<br>1.09M
+                    </div>
+                  </div>
+                  <div class="bal-handle">
+                    <span class="handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+                </div>
+
+                <div id="example6" class="bal-container-small">
+                  <div class="bal-after">
+                    <img src="./static/images/DSC07681.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      3DGS<br>2.65M
+                    </div>
+                  </div>
+                  <div class="bal-before">
+                    <div class="bal-before-inset">
+                      <img src="./static/images/DSC07681_53605.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Ours<br>47.59M
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bal-handle">
+                    <span class="handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--/ Secod -->
+        <div class="column">
+          <div class="columns is-centered">
+            <div class="column content">
+
+              <div id="example7" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/DSC04969.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    3DGS<br>1.09M
+                  </div>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <img src="./static/images/DSC04969_6w.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Ours<br>32.19M
+                    </div>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+
+              <div id="example8" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/DSC08009.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    3DGS<br>2.65M
+                  </div>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <img src="./static/images/DSC08009_53605.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Ours<br>47.59M
+                    </div>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+        <h2 class="title is-4">Visual Quality vs. Number of Gaussians</h2>
+        Urban scenes require a vast number of Gaussian primitives, which a single-core GPU struggles to handle. <br><br>
+    <div class="columns is-centered">
+    </div>
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+
+                <div id="example1" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/2_100M.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      100M<br>8GPU
+                    </div>
+                  </div>
+
+                  <div class="bal-before">
+                    <div class="bal-before-inset">
+                      <img src="./static/images/2_1B.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        1B<br>64GPU
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle">
+                    <span class="handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+
+                <div id="example2" class="bal-container-small">
+                  <div class="bal-after">
+                    <img src="./static/images/5_100M.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      100M<br>8GPU
+                    </div>
+                  </div>
+                  <div class="bal-before">
+                    <div class="bal-before-inset">
+                      <img src="./static/images/5_1B.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        1B<br>64GPU
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bal-handle">
+                    <span class="handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--/ Secod -->
+        <div class="column">
+          <div class="columns is-centered">
+            <div class="column content">
+
+              <div id="example3" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/6_100M.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    100M<br>8GPU
+                  </div>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <img src="./static/images/6_1B.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      1B<br>64GPU
+                    </div>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+
+              <div id="example4" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/8_100M.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    100M<br>8GPU
+                  </div>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <img src="./static/images/8_1B.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      1B<br>64GPU
+                    </div>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!--End Visual Comparisons-->
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{li2024retinags,
+  title={RetinaGS: Scalable Training for Dense Scene Rendering with Billion-Scale 3D Gaussians},
+  author={Li, Bingling and Chen, Shengyi and Wang, Luchao and He, Kaimin and Yan, Sijie and Xiong, Yuanjun},
+  journal={arXiv preprint arXiv:2406.11836},
+  year={2024}
+}</code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+  <!--References -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">References</h2>
+
+      <div class="content has-text-justified">
+        <p>
+          [1] Kerbl, B., Kopanas, G., Leimkühler, T., & Drettakis, G. (2023). 3D Gaussian Splatting for Real-Time Radiance Field Rendering. ACM Transactions on Graphics.
+        </p>
+        <p>
+          [2] Lin, J., Li, Z., Tang, X., Liu, J., Liu, S., Liu, J., Lu, U., Wu, X., Xu, S., Yan, Y. & Yang, W. (2024). Vastgaussian: Vast 3d gaussians for large scene reconstruction. CVPR.
+        </p>
+        <p>
+          [3] Liu, Y., Guan, H., Luo, C., Fan, L., Peng, J., & Zhang, Z. (2024). Citygaussian: Real-time high-quality large-scale scene rendering with gaussians. ECCV.
+        </p>
+      </div>
+
+
+    </div>
+  </section>
+  <!--End References -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              Thanks for the open souece template from <a
+                href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project
+                Page Template.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+  <script src="./static/js/script.js"></script>
+
+  <script>
+    new BeforeAfter({id: '#example1'});
+    new BeforeAfter({id: '#example2'});
+    new BeforeAfter({id: '#example3'});
+    new BeforeAfter({id: '#example4'});
+    new BeforeAfter({id: '#example5'});
+    new BeforeAfter({id: '#example6'});
+    new BeforeAfter({id: '#example7'});
+    new BeforeAfter({id: '#example8'});
+  </script>
+
+</body>
+
+</html>
