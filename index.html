@@ -139,6 +139,7 @@
   </section>
 
 
+
   <!--videos carousel -->
   <section class="hero is-small">
     <div class="hero-body">
@@ -192,10 +193,11 @@
               <source src="./static/videos/Demo_B_2_Compression.mp4" type="video/mp4">
             </video>
           </div>
-          
         </div>
+        <div class="content has-text-justified"><p></br>Our approach enables the training of a native large-scale 3D Gaussian Splatting (3DGS) model with over <b>1 billion Gaussian Primitives</b>. The videos showcase the reconstruction results on a 2.7 km² city dataset with 140,000 images. Even when zooming in to a specific location, the details remain rich and realistic.</br></p></div>
       </div>
     </div>
+
   </section>
   <!-- End videos carousel -->
 
@@ -210,7 +212,7 @@
               In this work, we explore the possibility of training high-parameter 3D Gaussian
               splatting (3DGS) models on <b>large-scale, high-resolution</b> datasets. We design a
               general <b>model parallel</b> training method for 3DGS, named RetinaGS, which uses a
-              proper rendering equation and can be applied to any scene and arbitrary distribution
+              proper rendering equation and <b>can be applied to any scene and arbitrary distribution</b>
               of Gaussian primitives. It enables us to explore the scaling behavior of 3DGS in
               terms of primitive numbers and training resolutions that were difficult to explore
               before and surpass previous state-of-the-art reconstruction quality. We observe a
@@ -226,10 +228,81 @@
   </section>
   <!-- End paper abstract -->
 
-  <!--Visual Comparisons in MatrixCity-->
+  <!--Method-->
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Visual Comparisons in MatrixCity</h2>
+      <h2 class="title is-3">Method Overview</h2>
+
+      <div class="columns is-centered">
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Analysis -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Anylysis</h2>
+      <br>
+      <h2 class="title is-4">Performance vs. Gaussian Primitives</h2>
+      <img src="./static/images/PSNRvsPrimitives.png" alt="Graph for quality evaluation">
+      <div class="content has-text-justified">
+        <p>
+          Our distributed training approach <b>enables the use of a large number of Gaussian primitives.</b>
+          We observed a strong positive correlation between the number of Gaussian primitives and the final model's
+          PSNR.
+          When the number of primitives is similar, our PSNR closely matches the quality of 3DGS trained on a single
+          GPU;
+          however, we can effectively achieve <b>higher PSNRs by simply increasing the number of primitives.</b>
+        </p>
+      </div>
+      <br><br>
+      <h2 class="title is-4">Many-to-Many Relationship Between Rays and Traversed Subspaces</h2>
+      <img src="./static/images/Fig2.png" alt="Graph for quality evaluation">
+      <br><br>
+      <div class="content has-text-justified">
+        <p>
+          Previous methods [2,3] skip the merging process between subspaces,
+          <b>implicitly assuming that a single ray is primarily influenced by one subspace and predominantly contributed
+            to by Gaussians within that subspace.</b>
+          This assumption holds true for bird's-eye view datasets. Due to the limited perspective variation in these
+          datasets,
+          rays almost always pass downward through one, or at most two, subspaces.
+          Above figure shows the frequency histogram of the number of subspaces hit by each ray.
+          As seen in more general datasets, such as street view datasetsand indoor datasets,
+          rays often intersect multiple subspaces. This undermines the basic assumptions of previous works.
+
+          <b>Our distributed framework is computationally equivalent to the original 3DGS and does not rely on any
+            assumptions about data distribution or perspective </b>, making it a more general approach.
+        </p>
+      </div>
+
+
+      <br><br>
+      <h2 class="title is-4">Effectiveness of Partition Strategies</h2>
+      <div class="content has-text-justified">
+        <p>
+          Below figure shows blending results at the sub-space boundaries for different partition approaches.
+          The cell-independent methods used in previous works [2,3] can cause rendering artifacts at
+          boundaries.
+        </p>
+      </div>
+      <img src="./static/images/Dividing.png" alt="Graph for quality evaluation">
+
+
+    </div>
+  </section>
+  <!-- End Analysis -->
+
+  <!--Results-->
+  <section class="section">
+    <div class="container is-max-desktop">
+        <h2 class="title is-3">Results</h2>
+        <h2 class="title is-4">Bird-View & Street-View</h2>
+    <div class="columns is-centered">
+    </div>
       <div class="columns is-centered">
 
         <div class="column">
@@ -340,15 +413,14 @@
         </div>
 
       </div>
+
     </div>
   </section>
   <!--End Visual Comparisons in MatrixCity-->
-
-
-  <!--Visual Comparisons under Indoor Scenes-->
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Visual Comparisons in ScanNet++ (Zoom in)</h2>
+      <h2 class="title is-4">Indoor</h2>
+      In the real world, the closer you are to an object, the more details you can observe. However, the memory limitations of a single-core GPU restrict the number of rendering units (Gaussian Primitives), making it difficult to closely inspect objects with high detail. Distributed training can significantly improve this limitation.<br><br>
       <div class="columns is-centered">
 
         <div class="column">
@@ -455,60 +527,10 @@
         </div>
 
       </div>
+
     </div>
   </section>
   <!--End Visual Comparisons-->
-
-  <!-- Analysis -->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Analysis</h2>
-
-      <div class="content has-text-justified">
-        <p>
-          Our distributed training approach <b>enables the use of a large number of Gaussian primitives.</b>
-          We observed a strong positive correlation between the number of Gaussian primitives and the final model's
-          PSNR.
-          When the number of primitives is similar, our PSNR closely matches the quality of 3DGS trained on a single
-          GPU;
-          however, we can effectively achieve <b>higher PSNRs by simply increasing the number of primitives.</b>
-        </p>
-      </div>
-      <img src="./static/images/PSNRvsPrimitives.png" alt="Graph for quality evaluation">
-      
-      <div class="content has-text-justified">
-        <p>
-          Methods like VastGaussian and CityGaussian skip the merging process between subspaces,
-          <b>implicitly assuming that a single ray is primarily influenced by one subspace and predominantly contributed
-            to by Gaussians within that subspace.</b>
-          This assumption holds true for bird's-eye view datasets. Due to the limited perspective variation in these
-          datasets,
-          rays almost always pass downward through one, or at most two, subspaces.
-          Below figure shows the frequency histogram of the number of subspaces hit by each ray.
-          As seen in more general datasets, such as street view datasetsand indoor datasets,
-          rays often intersect multiple subspaces. This undermines the basic assumptions of VastGaussian and
-          CityGaussian.
-
-          <b>Our distributed framework is computationally equivalent to the original 3DGS and does not rely on any
-            assumptions about data distribution or perspective </b>, making it a more general approach.
-        </p>
-      </div>
-
-      <img src="./static/images/Fig2.png" alt="Graph for quality evaluation">
-
-      <div class="content has-text-justified">
-        <p>
-          Below figure shows blending results at the sub-space boundaries for different partition approaches.
-          The cell-independent methods used in CityGaussian and VastGaussian can cause rendering artifacts at
-          boundaries.
-        </p>
-      </div>
-      <img src="./static/images/Dividing.png" alt="Graph for quality evaluation">
-
-      
-    </div>
-  </section>
-  <!-- End Analysis -->
 
   <!--BibTex citation -->
   <section class="section" id="BibTeX">
@@ -528,20 +550,20 @@
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">References</h2>
-      
+
       <div class="content has-text-justified">
         <p>
-          Kerbl, B., Kopanas, G., Leimkühler, T., & Drettakis, G. (2023). 3D Gaussian Splatting for Real-Time Radiance Field Rendering. ACM Transactions on Graphics.
+          [1] Kerbl, B., Kopanas, G., Leimkühler, T., & Drettakis, G. (2023). 3D Gaussian Splatting for Real-Time Radiance Field Rendering. ACM Transactions on Graphics.
         </p>
         <p>
-          Lin, J., Li, Z., Tang, X., Liu, J., Liu, S., Liu, J., Lu, U., Wu, X., Xu, S., Yan, Y. & Yang, W. (2024). Vastgaussian: Vast 3d gaussians for large scene reconstruction. CVPR.
+          [2] Lin, J., Li, Z., Tang, X., Liu, J., Liu, S., Liu, J., Lu, U., Wu, X., Xu, S., Yan, Y. & Yang, W. (2024). Vastgaussian: Vast 3d gaussians for large scene reconstruction. CVPR.
         </p>
         <p>
-          Liu, Y., Guan, H., Luo, C., Fan, L., Peng, J., & Zhang, Z. (2024). Citygaussian: Real-time high-quality large-scale scene rendering with gaussians. ECCV.
+          [3] Liu, Y., Guan, H., Luo, C., Fan, L., Peng, J., & Zhang, Z. (2024). Citygaussian: Real-time high-quality large-scale scene rendering with gaussians. ECCV.
         </p>
       </div>
 
-      
+
     </div>
   </section>
   <!--End References -->
