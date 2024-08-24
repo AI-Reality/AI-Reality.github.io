@@ -278,15 +278,21 @@
             assumptions about data distribution or perspective </b>, making it a more general approach.
         </p>
       </div>
+      The following video demonstrates the visual effects from both a <b>bird view</b> and a <b>street view</b> in an urban scene. <br><br>
+      <div class="item">
+        <video poster="" id="video_city" autoplay controls muted loop height="100%">
+          <source src="./static/videos/Demo_B_8_Compression.mp4" type="video/mp4">
+        </video>
+      </div>
 
 
       <br><br>
       <h2 class="title is-4">Effectiveness of Partition Strategies</h2>
       <div class="content has-text-justified">
         <p>
-          Below figure shows blending results at the sub-space boundaries for different partition approaches.
+          Below figure shows merge tests with only two subspaces for different partition approaches.
           The cell-independent methods used in previous works [2,3] can cause rendering artifacts at
-          boundaries.
+          boundaries. Our approach renders the boundaries perfectly.
         </p>
       </div>
       <img src="./static/images/Dividing.png" alt="Graph for quality evaluation">
@@ -300,7 +306,123 @@
   <section class="section">
     <div class="container is-max-desktop">
         <h2 class="title is-3">Results</h2>
-        <h2 class="title is-4">Bird-View & Street-View</h2>
+      <h2 class="title is-4">Close-up Inspection of Indoor Objects</h2>
+      In the real world, the closer you are to an object, the more details you can observe. However, the memory limitations of a single-core GPU restrict the number of rendering units (Gaussian Primitives), making it difficult to closely inspect objects with high detail. Distributed training can significantly improve this limitation.<br><br>
+      <div class="columns is-centered">
+
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+
+                <div id="example5" class="bal-container-small">
+                  <div class="bal-before">
+                    <div class="bal-before-inset">
+                      <img src="./static/images/DSC04902_6w.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Ours<br>32.19M
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bal-after">
+                    <img src="./static/images/DSC04902.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      3DGS<br>1.09M
+                    </div>
+                  </div>
+                  <div class="bal-handle">
+                    <span class="handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+                </div>
+
+                <div id="example6" class="bal-container-small">
+                  <div class="bal-after">
+                    <img src="./static/images/DSC07681.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      3DGS<br>2.65M
+                    </div>
+                  </div>
+                  <div class="bal-before">
+                    <div class="bal-before-inset">
+                      <img src="./static/images/DSC07681_53605.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Ours<br>47.59M
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bal-handle">
+                    <span class="handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--/ Secod -->
+        <div class="column">
+          <div class="columns is-centered">
+            <div class="column content">
+
+              <div id="example7" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/DSC04969.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    3DGS<br>1.09M
+                  </div>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <img src="./static/images/DSC04969_6w.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Ours<br>32.19M
+                    </div>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+
+              <div id="example8" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/DSC08009.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    3DGS<br>2.65M
+                  </div>
+                </div>
+                <div class="bal-before">
+                  <div class="bal-before-inset">
+                    <img src="./static/images/DSC08009_53605.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Ours<br>47.59M
+                    </div>
+                  </div>
+                </div>
+                <div class="bal-handle">
+                  <span class="handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+        <h2 class="title is-4">Visual Quality vs. Number of Gaussians</h2>
+        Urban scenes require a vast number of Gaussian primitives, which a single-core GPU struggles to handle. <br><br>
     <div class="columns is-centered">
     </div>
       <div class="columns is-centered">
@@ -416,120 +538,8 @@
 
     </div>
   </section>
-  <!--End Visual Comparisons in MatrixCity-->
-  <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-4">Indoor</h2>
-      In the real world, the closer you are to an object, the more details you can observe. However, the memory limitations of a single-core GPU restrict the number of rendering units (Gaussian Primitives), making it difficult to closely inspect objects with high detail. Distributed training can significantly improve this limitation.<br><br>
-      <div class="columns is-centered">
 
-        <div class="column">
-          <div class="content">
-            <div class="columns is-centered">
-              <div class="column is-full-width">
 
-                <div id="example5" class="bal-container-small">
-                  <div class="bal-before">
-                    <div class="bal-before-inset">
-                      <img src="./static/images/DSC04902_6w.png">
-                      <div class="bal-beforePosition beforeLabel">
-                        Ours<br>32.19M
-                      </div>
-                    </div>
-                  </div>
-                  <div class="bal-after">
-                    <img src="./static/images/DSC04902.png">
-                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                      3DGS<br>1.09M
-                    </div>
-                  </div>
-                  <div class="bal-handle">
-                    <span class="handle-left-arrow"></span>
-                    <span class="handle-right-arrow"></span>
-                  </div>
-                </div>
-
-                <div id="example6" class="bal-container-small">
-                  <div class="bal-after">
-                    <img src="./static/images/DSC07681.png">
-                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                      3DGS<br>2.65M
-                    </div>
-                  </div>
-                  <div class="bal-before">
-                    <div class="bal-before-inset">
-                      <img src="./static/images/DSC07681_53605.png">
-                      <div class="bal-beforePosition beforeLabel">
-                        Ours<br>47.59M
-                      </div>
-                    </div>
-                  </div>
-                  <div class="bal-handle">
-                    <span class="handle-left-arrow"></span>
-                    <span class="handle-right-arrow"></span>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--/ Secod -->
-        <div class="column">
-          <div class="columns is-centered">
-            <div class="column content">
-
-              <div id="example7" class="bal-container-small">
-                <div class="bal-after">
-                  <img src="./static/images/DSC04969.png">
-                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                    3DGS<br>1.09M
-                  </div>
-                </div>
-                <div class="bal-before">
-                  <div class="bal-before-inset">
-                    <img src="./static/images/DSC04969_6w.png">
-                    <div class="bal-beforePosition beforeLabel">
-                      Ours<br>32.19M
-                    </div>
-                  </div>
-                </div>
-                <div class="bal-handle">
-                  <span class="handle-left-arrow"></span>
-                  <span class="handle-right-arrow"></span>
-                </div>
-              </div>
-
-              <div id="example8" class="bal-container-small">
-                <div class="bal-after">
-                  <img src="./static/images/DSC08009.png">
-                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
-                    3DGS<br>2.65M
-                  </div>
-                </div>
-                <div class="bal-before">
-                  <div class="bal-before-inset">
-                    <img src="./static/images/DSC08009_53605.png">
-                    <div class="bal-beforePosition beforeLabel">
-                      Ours<br>47.59M
-                    </div>
-                  </div>
-                </div>
-                <div class="bal-handle">
-                  <span class="handle-left-arrow"></span>
-                  <span class="handle-right-arrow"></span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
   <!--End Visual Comparisons-->
 
   <!--BibTex citation -->
