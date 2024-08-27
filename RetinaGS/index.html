@@ -231,13 +231,34 @@
   <!--Method-->
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Method Overview</h2>
+      <h2 class="title is-3">Method</h2>
 
-      <div class="columns is-centered">
+      <img src="./static/images/Teaser_300dpi_crop.png" alt="Graph for quality evaluation">
+      <div class="content has-text-justified">
+        <p>
+          Different sizes of datasets require varying levels of computational power and numbers of 3DGS Primitives. 
+          Larger and higher-resolution datasets can <b> no longer be trained using just a single GPU </b>, 
+          which limits the pursuit of scale and fidelity in 3DGS.
+        </p>
       </div>
+
+      <img src="./static/images/pipeline_1500dpi.png" alt="Graph for quality evaluation">  
+      <div class="content has-text-justified">
+        <p>
+          The <b>training pipeline</b> is shown in  above figure. 
+          We denote each subset as a sub-model and assign it to a separate GPU, 
+          while a central manager is responsible for managing the subspaces <em>S<sub>n</sub></em>.
+          This manager also handles the parsing of incoming rendering requests and distributes rendering tasks to the relevant sub-models.
+          The computational results from all sub-models, <em>T<sub>k</sub></em> and <em>C<sub>k</sub></em>, are sent back to the central manager. 
+          These results can be represented in a 2D map with the same resolution as the target image, which consumes only <b>minimal communication bandwidth</b>. 
+          The central manager then completes the final rendering, calculates the loss, 
+          and sends the gradient back to each sub-model for model parameter updates.
+        </p>
+      </div>
+      
     </div>
   </section>
-
+  <!-- End Method-->
 
 
 
